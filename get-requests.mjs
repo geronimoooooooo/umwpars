@@ -24,8 +24,6 @@ export async function fetchXmlFromMds(url) {
     }
   }
 
-
-
 async function getXmlFromMds(){
     fetch(urlGet)
         .then((response) => response.text())
@@ -48,11 +46,6 @@ async function getXmlFromMds(){
 //     }
 //   })
 console.log("xml:" + xmlFromMds);
-
-
-
-
-    
 
 // fetch(urlGet)
 //     .then(response => {
