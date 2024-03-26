@@ -60,9 +60,8 @@ parser.parseString(xml_string, function(error, result) {
 });
 
 
-
-xml2js.parseString(fs.readFile(filePath, 'utf-8'), function(err, result) {
-    console.log("aa: "+ result);
+xml2js.parseString(fs.readFileSync(filePath, "utf8"), function(err, result) {
+    console.log("aa: "+ JSON.stringify(result));
 });
 
 
