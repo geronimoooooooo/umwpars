@@ -147,4 +147,5 @@ const xmlS = await fetchXmlFromMds(urlGet)
   })
 
 
+  xmlFile.parseMyXmlFast()
 //   console.log('XML Response:', xmlFromMds);

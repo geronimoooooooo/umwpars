@@ -98,7 +98,17 @@ function printStationNames(arrStationsNamen){
     });
 }
 
+function parseMyXmlFast(){
+  var parser = new xml2js.Parser();
+  fs.readFile('files/xml.xml', function(err, data) {
+  parser.parseString(data, function (err, result) {
+    console.dir(result, {depth: null});
+    console.log('Done');
+});
+});
+}
+
 
 module.exports = {tester, parseXmlAsync, printXml2Console, getXmlFromFile, 
-  printXml2ConsoleWithStartkey, printStationNames, readConfigXmlFile};
+  printXml2ConsoleWithStartkey, printStationNames, readConfigXmlFile, parseMyXmlFast};
   
