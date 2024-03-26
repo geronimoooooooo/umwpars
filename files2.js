@@ -2,12 +2,18 @@ const fs = require('fs');
 const { resourceLimits } = require('worker_threads');
 const xml2js = require('xml2js');
 
+const xmlFile = require('./xmlFile');
+
+
+
 const xmlPath = "files/xml.xml"
 
 let xmlString2 = '<?xml version="1.0" encoding="UTF-8"?>';//<url><loc>https://johnnyreilly.com/tags/ajax</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>';
 xmlString2 = "xmlversionencodingUTFurllochttpsjohnnyreillycomtagsajaxlocchangefreqweeklychangefreqprioritypriorityurl"
 
 let xmlString = fs.readFileSync(xmlPath, "utf8");
+
+
 xmlString = xmlString.trim().replace(/[^a-zA-Z]/g, "");
 xmlString2 = xmlString2.trim().replace(/[^a-zA-Z]/g, "");
 
@@ -21,6 +27,11 @@ if(xmlString == xmlString2){
 xmlString = fs.readFileSync(xmlPath, "utf8");
 
 xml2js.parseString(xmlString, (err,result)=>{
+    if (err) {
+        throw err;
+       }
+
+    console.log(JSON.stringify(result));
     console.log(result);
     console.log(result['url']['loc']);
 })
@@ -34,3 +45,5 @@ function parseXml(xml){
   }
 
   console.log(parseXml(xmlString));
+  
+

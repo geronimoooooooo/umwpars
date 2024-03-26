@@ -29,3 +29,7 @@ console.log("Note that you can't use value here\
     }
  };
 // console.dir(myObject, { depth: null });
+let currentDate = new Date();
+console.log(currentDate);
+currentDate.setMinutes(currentDate.getMinutes() - 10)
+console.log(currentDate)
