@@ -1,6 +1,8 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
 
+
+
 function readXmlFile(filePath, callback) {
     fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
@@ -18,7 +20,7 @@ function readXmlFile(filePath, callback) {
     });
 }
 
-// Example usage:
+
 const filePath = 'example.xml'; // Replace with your XML file path
 
 const arrList = [];
@@ -28,13 +30,13 @@ readXmlFile(filePath, (err, result) => {
     if (err) {
         console.error('Error reading XML file:', err);
     } else {
-        // console.log('XML content:', result);
+        console.log('XML content:', result);
         // console.log('XML content:', JSON.stringify(result));
         // arrList.push(JSON.stringify(result));
         arrList.push(result);
         result['urlset']['url'].forEach((e)=>arrLoc.push(e['loc']));
     }
-    printArrList();
+    // printArrList();
 });
 
 
@@ -46,8 +48,22 @@ function printArrList(){
     });
 }
 
+const parser = new xml2js.Parser({ attrkey: "ATTR" });
+let xml_string = fs.readFileSync(filePath, "utf8");
+
+parser.parseString(xml_string, function(error, result) {
+  if (error === null) {
+    console.log(result);
+  } else {
+    console.log(error);
+  }
+});
 
 
+
+xml2js.parseString(fs.readFile(filePath, 'utf-8'), function(err, result) {
+    console.log("aa: "+ result);
+});
 
 
 // readXmlFile(filePath);
