@@ -11,7 +11,7 @@ log4js.configure({
         type: "pattern",
         // Output will include filename and line number
         // %n %c
-        pattern: "%d %p: %m [%f{1}:%l] ",
+        pattern: "%d %p : %m [%f{1}.%M():%l] ",
       },
     },
   },
