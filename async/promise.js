@@ -31,3 +31,18 @@ function functionPromise(name){
 };
 
 functionPromise("bro").then(res=>logger.info(res));
+
+const count = true;
+let some ="ab";
+
+let countValue = new Promise(function (resolve, reject) {
+    if (count) {
+        resolve("There is a count value.");
+    } else {
+        reject("There is no000000 count value");
+    }
+});
+console.log(countValue);
+countValue.then(function(result){
+    logger.info(result);
+});
