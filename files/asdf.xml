@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Angabe des Web Servers, von welchem die Daten eingelesen werden.-->
+<klima>
+	<!--Datenbankverbindung an welche Daten geschickt werden.-->
+	<datenbank>
+		<!--Bitte den Servernamen/Hostname angeben. -->
+		<db_server>ispacevm02.researchstudio.at</db_server>
+		<!--Bitte den Port der Datenbankverbindung angeben. (z.B.1545)  -->
+		<db_port>1521</db_port>
+		<db_servicename>orageopdb.researchstudio.at</db_servicename>
+		<db_schema>KLIMA22</db_schema>
+		<db_password>klima220815</db_password>
+	</datenbank>
+	<proxy_verbindung>
+	<!-- Proxy Einstellungen nur vornehmen, wenn Verbindungsprobleme auftreten oder unbedingt notwendig, 
+	ansonsten proxy Felder frei lassen!! -->
+		<proxySet_key></proxySet_key>
+		<proxySet_value></proxySet_value>
+		<proxyHost_key></proxyHost_key>
+		<proxyHost_value></proxyHost_value>
+		<proxyPort_key></proxyPort_key>
+		<proxyPort_value></proxyPort_value>
+	</proxy_verbindung>
+	<app-npv-betrieb>
+			<!-- Angeben in welchen zeitlichen Abständen (Minuten) die Stationen abgefragt werden. -->
+		<periode>10</periode>
+			<!--Name der Logdatei (eigenständiger custom-logger) für die gesamte Applikation "Service Logdatei"-->
+		<logdatei-name>npv-betrieb-custom-application.log</logdatei-name>
+			<!-- Gibt an ob web app beim Starten des Tomcats automatisch von alleine startet oder ob man selber
+			auf der Startseite von npv-betrieb den Start Button betätigen möchte. Inputmöglichkeiten: true oder false.-->
+		<app-start-on-load>true</app-start-on-load>
+			<!-- Groeße der Logdatei in MB, die von java.util.logging genutzt wird. Wenn erste voll, wird in
+			der naechsten (siehe rotation) weiter geschrieben. Dateien sind im Tomcat Ordner. -->
+		<app-logfile-size-mb>100</app-logfile-size-mb>
+			<!-- Gibt an wie viele Logdateien es gibt, die in Rotation (round robin) genutzt werden. -->
+		<app-logfile-rotation>5</app-logfile-rotation>
+			<!-- Gibt an wie viele Zeilen eine Station Logdatei haben kann, bevor eine bestimmte Anzahl
+			an Zeilen, der ältesten Logs, entfernt werden. -->
+		<station-logfile-max-lines>30000</station-logfile-max-lines>
+			<!-- Gibt an wie viele Zeilen in der Station Logdatei entfernt werden, sobald eine bestimmte max. Anzahl ereicht wird. -->
+			<station-logfile-delete-lines>5000</station-logfile-delete-lines>
+		<!-- Notwendiges Passwort um Service auf der Übersichtseite zu starten oder zu stoppen. -->
+		<app-passwort>npbg</app-passwort>
+		<!-- Gibt an wie viele Stunden maximal in der Vergangenheit nachgetragen/mit abgefragt werden-->
+		<app-zeit-in-vergangenheit>24</app-zeit-in-vergangenheit>
+		<!-- Gibt an wie viele Stunden maximal die Letzte Messung in der DB in der Vergangenheit liegen darf 
+		bevor eine Warnung (gelb) auf der Startseite angezeigt wird. -->
+		<app-max-erlaubtes-alter-messdatum>12</app-max-erlaubtes-alter-messdatum>
+	</app-npv-betrieb>
+	<klima_server>
+		<link>https://mds.sommer.at/Web-Service-Admintool/fetchXHydro10.php</link>
+		<username>npvbgd</username>
+		<password>4f56bbca4d4bdbe06cb8819286ea8690</password>
+	</klima_server>
+	<!--Liste der Stationen, die abgefragt werden-->
+	<stationen>
+		<station-beispiel>
+			<!--Name der Wetterstation, welcher auf der Webseite angezeigt wird-->
+			<name>TestStation</name>
+			<!--Name der Logdatei für die Wetterstation-->
+			<logdatei-name>Blaueis_log.txt</logdatei-name>
+			<!--Statusinformation ob die Messstation aktiv ist oder nicht und dementsprechend Daten abgefragt werden-->
+			<!--Ausprägungen: aktiv/inaktiv-->
+			<status>aktiv</status>
+			<!--Bitte die Stationsnummer der Wetterstation nach sommer.at angeben. -->
+			<nummer>11080139</nummer>
+			<!--Tabelle z.b. "KLIMA21"."BLAUEIS" (" gehören zum String) in die Messwerte der Station verspreichert werden. -->
+			<db_tabellenname>"KLIMA21"."BLAUEIS"</db_tabellenname>
+			<!--Datum wann die Konfiguration das letzte mal geändert wurde.-->
+			<konfigurationsdatum>15.03.2022</konfigurationsdatum>
+			<!--Das Feld "von" ist nur im development mode und hilft beim Testen/Programmieren -->
+			<vonOg>2022-06-10T011:40:00</vonOg>
+			<!-- Datum und Uhrzeit ab wann die Daten abgefragt werden. Lokale Zeit (ohne UTC mit Z) -->
+			<von>2022-05-18T14:50:00</von>	
+			<!-- Matching zwischen den DB Spalten und XML bezüglich der Messphenomäne -->
+			<!-- Beispiel "{2,1}" {db_spalte,xml_feld}bedeutet, dass in die 2.DB Spalte (in der 1.DB Spalte steht Datum) das 1. XML Feld (Wert) abgespeichert wird -->
+			<matching>{{2,1},{3,2},{4,7},{5,5},{6,6},{7,3},{8,4},{9,12},{10,8},{11,9},{12,10},{13,11},{14,13},{15,0}}</matching>		
+		</station-beispiel>
+		 <station>		
+			<name>Alpelwand</name>			
+			<logdatei-name>Alpelwand_log.txt</logdatei-name>			
+			<status>aktiv</status>			
+			<nummer>25062015</nummer>			
+			<db_tabellenname>"KLIMA22"."ALPELWAND"</db_tabellenname>			
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>			
+			<von>2023-06-10T011:40:00</von>		
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,0},{15,0}}</matching>		
+		</station> 
+		<station>		
+			<name>Bindalm</name>			
+			<logdatei-name>Bindalm_log.txt</logdatei-name>			
+			<status>aktiv</status>			
+			<nummer>08140883</nummer>			
+			<db_tabellenname>"KLIMA22"."BINDALM"</db_tabellenname>			
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>			
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,0},{12,0}}</matching>		
+		</station>
+		<station>
+			<name>Trischuebel</name>
+			<logdatei-name>Trischuebel_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>29090285</nummer>
+			<db_tabellenname>"KLIMA22"."TRISCHUEBEL"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>			
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,0},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,0},{16,0},{17,0},{18,0},{19,0},{20,0},{21,7}}</matching>		
+		</station> 		
+		<station>		
+			<name>Blaueis</name>			
+			<logdatei-name>Blaueis_log.txt</logdatei-name>			
+			<status>aktiv</status>			
+			<nummer>11080139</nummer>			
+			<db_tabellenname>"KLIMA22"."BLAUEIS"</db_tabellenname>			
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>			
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14},{16,0}}</matching>		
+		</station>
+		<station>
+			<name>Brunftbergtiefe</name>
+			<logdatei-name>Brunftbergtiefe_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>43080208</nummer>
+			<db_tabellenname>"KLIMA22"."BRUNFTBERGTIEFE"</db_tabellenname>
+			<konfigurationsdatum>14.09.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,11},{5,12},{6,13},{7,14},{8,3},{9,4},{10,5},{11,6},{12,7},{13,8},{14,9},{15,10},{16,15},{17,0},{18,16},{19,0}}</matching>			
+		</station>
+   	 <station>
+			<name>Hinterberghorn</name>
+			<logdatei-name>Hinterberghorn_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>09080126</nummer>
+			<db_tabellenname>"KLIMA22"."HINTERBERGHORN"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,6},{5,7},{6,8},{7,9},{8,3},{9,4},{10,5},{11,0}</matching>
+		</station>
+		<station>
+			<name>Hinterseeau</name>
+			<logdatei-name>Hinterseeau_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>34080167</nummer>
+			<db_tabellenname>"KLIMA22"."HINTERSEEAU"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>	
+			<matching>{{2,1},{3,2},{4,0},{5,0},{6,0},{7,0},{8,3},{9,4},{10,5},{11,6},{12,7},{13,8},{14,9},{15,10},{16,0},{17,11},{18,0}}</matching>
+		</station>	
+		<station>
+			<name>Hoellgraben (LWD)</name>
+			<logdatei-name>Hoellgraben_LWD_archiv_log.txt</logdatei-name>	
+			<status>aktiv</status>
+			<nummer>02190574</nummer>
+			<db_tabellenname>"KLIMA22"."HOELLGRABEN_LWD"</db_tabellenname>		
+			<konfigurationsdatum>21.11.2023</konfigurationsdatum>			
+			<von>2023-06-11T011:40:00</von>	
+			<matching>{{2,1},{3,2},{4,3},{5,0},{6,0}}</matching>
+		</station>
+		<station>
+			<name>Schlunghorn</name>
+			<logdatei-name>Schlunghorn_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>45080225</nummer>
+			<db_tabellenname>"KLIMA22"."SCHLUNGHORN"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>	
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,0}}</matching>	
+		</station>	
+		<station>
+			<name>Watzmanngrat</name>
+			<logdatei-name>Watzmanngrat_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>51080247</nummer>
+			<db_tabellenname>"KLIMA22"."WATZMANNGRAT"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,5},{5,6},{6,7},{7,8},{8,9},{9,4},{10,3},{11,10},{12,0}}</matching>	
+		</station>
+		<station>
+			<name>Watzmannhaus</name>
+			<logdatei-name>Watzmannhaus_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>16070043</nummer>
+			<db_tabellenname>"KLIMA22"."WATZMANNHAUS"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,6},{5,7},{6,8},{7,9},{8,3},{9,4},{10,5},{11,0}}</matching>	
+		</station>
+		<station>
+			<name>Kuehroint (LWD)</name>
+			<logdatei-name>Kuehroint_LWD_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>50120745</nummer>
+			<db_tabellenname>"KLIMA22"."KUEHROINT_LWD" </db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14},{16,15},{17,16},{18,17},{19,18},{20,19},{21,20},{22,21},{23,22},{24,23},{25,24},{26,25},{27,26},{28,27},{29,28},{30,29},{31,30},{32,31},{33,32},{34,33},{35,34},{36,35},{37,36},{38,37},{39,38},{40,39},{41,0},{42,0}</matching>	
+		</station>
+		<station>
+			<name>Reiteralpe (LWD)</name>
+			<logdatei-name>Reiteralpe_LWD_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>82000437</nummer>
+			<db_tabellenname>"KLIMA22"."REITERALPE_LWD"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>
+			<matching>{{2,3},{3,4},{4,5},{5,1},{6,2},{7,7},{8,8},{9,10},{10,11},{11,12},{12,13},{13,14},{14,9},{15,15},{16,16},{17,17},{18,20},{19,0},{20,19},{21,18},{22,6},{23,22},{24,21},{25,0}}</matching>	
+		</station>
+		<station>
+			<name>Schneibsteinhaus (LWD)</name>
+			<logdatei-name>Schneibsteinhaus_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>00069390</nummer>
+			<db_tabellenname>"KLIMA22"."SCHNEIBSTEINHAUS"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>	
+			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,0},{11,0}}</matching>	
+		</station>
+		<station>
+			<name>Steinernes Meer</name>
+			<logdatei-name>Steinernes_Meer_log.txt</logdatei-name>
+			<status>aktiv</status>
+			<nummer>34090310</nummer>
+			<db_tabellenname>"KLIMA22"."STEINERNES_MEER"</db_tabellenname>
+			<konfigurationsdatum>21.07.2023</konfigurationsdatum>
+			<von>2023-06-10T011:40:00</von>	
+			<matching>{{2,11},{3,12},{4,13},{5,14},{6,7},{7,8},{8,15},{9,10},{10,0},{11,18},{12,1},{13,2},{14,3},{15,4},{16,5},{17,6},{18,9},{19,0},{20,0},{21,0},{22,0},{23,16},{24,17},{25,0},{26,0},{27,0},{28,0},{29,0},{30,0},{31,0},{32,0},{33,0}}</matching>
+		</station>	
+	</stationen>
+</klima>
