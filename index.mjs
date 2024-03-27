@@ -3,7 +3,7 @@
 
 import *  as xmlFile from "./xmlFile.js";
 // const { fetchXmlFromMds, urlGet } = require('./get-requests.mjs');
-import { fetchXmlFromMds,urlGet } from "./get-requests.mjs";
+import { fetchXmlFromMds,urlGet, getXmlFromMdsForAllUrls } from "./get-requests.mjs";
 
 const arrList = [];
 const arrLoc = [];
@@ -13,7 +13,7 @@ const arrStationsNamen = [];
 // console.log(xmlFile.getXmlFromFile())
 // xmlFile.printXml2ConsoleWithStartkey(xmlFile.getXmlFromFile('files/npv-archiv-configuration.xml'));
 
-// xmlFile.readConfigXmlFile('files/xml.xml', (err, result) => {
+// xmlFile.readXmlFile('files/xml.xml', (err, result) => {
 //     if (err) {
 //         console.error('Error reading XML file:', err);
 //     } else {
@@ -53,7 +53,7 @@ const arrStationsNamen = [];
 //     // xmlFile.printStationNames(arrStationsNamen)
 // });
 
-xmlFile.readConfigXmlFile('files/npv-archiv-configuration.xml', (err, result) => {
+xmlFile.readXmlFile('files/npv-archiv-configuration.xml', (err, result) => {
     if (err) {
         console.error('Error reading XML file:', err);
     } else {
@@ -127,25 +127,61 @@ const xmlS = await fetchXmlFromMds(urlGet)
     }
   })
 
-
-  const pro = xmlFile.parseXmlAsync(xmlFromMds);
+  const pro = xmlFile.parseXmlAsync(xmlFromMds);  
   pro.then(xmlString=>{
-    console.log("my xml: ");
+    
     // console.dir(xmlString, {depth: null});
-    let s1 = xmlString.tsel.pmdl.toString();
-    console.log(s1);
-    console.dir(xmlString.tsel.pmdl,{depth: null});
-    console.dir(arrList[0].pmdl,{depth: null});
+    let s1 = xmlString.tsel.pmdl.toString();    
+    // console.dir(xmlString.tsel.pmdl,{depth: null});
+    // console.dir(arrList[0].pmdl,{depth: null});
     
     if(JSON.stringify(xmlString.tsel.pmdl) == JSON.stringify(arrList[0].pmdl)){
-        console.log("HURRA!")
+        // console.log("HURRA!")
     }else{
-        console.log("fail");
-    }
-    console.log(typeof xmlString.tsel.pmdl)
-
+        // console.log("fail");
+    }   
   })
 
+  const arrStationsXmlResponseAsXml2jsObj = [];
+  const arrStationsXmlResponse = await getXmlFromMdsForAllUrls(arrList);
+  await arrStationsXmlResponse.forEach(e=>{
+    // console.log("aaaa: " +e)
 
-  xmlFile.parseMyXmlFast()
+    const pro = xmlFile.parseXmlAsync(e);
+    pro.then(xmlString=>{        
+        let s1 = xmlString.tsel.pmdl;
+        
+        // console.dir(s1,{depth: null});
+        // console.dir(arrList[0].pmdl,{depth: null});
+        arrStationsXmlResponseAsXml2jsObj.push(s1);        
+        console.log("bbbbbbbbbbb ")
+        console.dir(s1, {depth: null})
+      })
+  });
+
+  async function compare(config, server){
+    for (let index = 0; index < config.length; index++) {
+        const station = config[index];
+        if(JSON.stringify(config[index].pmdl) == server[index]){
+            console.log("HURRA!2222")
+        }else{
+            console.log("fail2222");
+            // console.dir(config[index].pmdl, {depth:null});
+            // console.log(server[index], {depth:null});
+        }   
+        
+    }
+  }
+
+//   await compare(arrList, arrStationsXmlResponseAsXml2jsObj);
+
+//   xmlFile.parseMyXmlFast()
 //   console.log('XML Response:', xmlFromMds);
+
+/*
+if(JSON.stringify(xmlString.tsel.pmdl) == JSON.stringify(arrList[0].pmdl)){
+            console.log("HURRA!")
+        }else{
+            console.log("fail");
+        }   
+        */

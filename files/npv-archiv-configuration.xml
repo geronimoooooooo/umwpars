@@ -74,6 +74,17 @@
 			<db_tabellenname>"KLIMA22"."BINDALM"</db_tabellenname>					
 			<aufgebaut>23.12.2014</aufgebaut>
 			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,0},{12,0}}</matching>
+			<pmdl>
+			<pmd><p>Lufttemp MW</p><u>C</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Feuchte MW</p><u>% rF</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Niederschlag SUM</p><u>mm</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Gewicht TW</p><u>kg</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>UBat TW</p><u>V</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Windgeschwindigkeit</p><u>m/s</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Windrichtung</p><u>Grad</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Windböe</p><u>m/s</u><pd><dn>08140883</dn></pd></pmd>
+			<pmd><p>Windböe Richtung</p><u>Grad</u><pd><dn>08140883</dn></pd></pmd>
+			</pmdl>
 		</station>
 		<station>
 			<name>Trischuebel</name>
@@ -82,6 +93,21 @@
 			<db_tabellenname>"KLIMA22"."TRISCHUEBEL"</db_tabellenname>
 			<aufgebaut>29.10.2009</aufgebaut>
 			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,0},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,0},{16,0},{17,0},{18,0},{19,0},{20,0},{21,7}}</matching>
+			<pmdl>
+			<pmd><p>Lufttemperatur_1764m</p><u>°C</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_1764m</p><u>% rF</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Einstrahlung_1764m</p><u>W/m²</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Rückstrahlung_1764m</p><u>W/m²</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Schneehöhe_1764m</p><u>cm</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Oberflächentemperatur_1764m</p><u>°C</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Niederschlag_1764m</p><u>mm</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Batteriespannung_1764m</p><u>V</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Windgeschwindigkeit_1764m</p><u>m/s</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Windrichtung_1764m</p><u>Grad</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Windböe_1764m</p><u>m/s</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Windrichtung Böe_1764m</p><u>Grad</u><pd><dn>29090285</dn></pd></pmd>
+			<pmd><p>Batteriespannung Brunftbergtiefe</p><u>V</u><pd><dn>29090285</dn></pd></pmd>
+			</pmdl>
 		</station>
 		<station>
 			<name>Blaueis</name>
@@ -90,6 +116,22 @@
 			<db_tabellenname>"KLIMA22"."BLAUEIS"</db_tabellenname>		
 			<aufgebaut>02.07.2008</aufgebaut>
 			<matching>{{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14},{16,0}}</matching>
+			<pmdl>
+			<pmd><p>Lufttemperatur_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_1650m</p><u>%rF</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Einstrahlung_1650m</p><u>W/m2</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Oberflächentemperatur_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Windrichtung_1650m</p><u>Grad</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Windböe_1650m</p><u>m/s</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Windgeschwindigkeit_1650m</p><u>m/s</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 0 cm_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 15 cm_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 40 cm_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 60 cm_1650m</p><u>°C</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Schneehöhe_1650m</p><u>cm</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Batteriespannung_1650m</p><u>V</u><pd><dn>11080139</dn></pd></pmd>
+			<pmd><p>Windrichtung Böe_1650m</p><u>Grad</u><pd><dn>11080139</dn></pd></pmd>
+			</pmdl>
 		</station>
 		<station>
 			<name>Brunftbergtiefe</name>
@@ -97,7 +139,25 @@
 			<nummer>43080208</nummer>
 			<db_tabellenname>"KLIMA22"."BRUNFTBERGTIEFE"</db_tabellenname>
 			<aufgebaut>09.12.2008</aufgebaut>					
-			<matching>{{2,1},{3,2},{4,11},{5,12},{6,13},{7,14},{8,3},{9,4},{10,5},{11,6},{12,7},{13,8},{14,9},{15,10},{16,15},{17,0},{18,16},{19,0}}</matching>			
+			<matching>{{2,1},{3,2},{4,11},{5,12},{6,13},{7,14},{8,3},{9,4},{10,5},{11,6},{12,7},{13,8},{14,9},{15,10},{16,15},{17,0},{18,16},{19,0}}</matching>	
+			<pmdl>
+			<pmd><p>Lufttemperatur_1240m</p><u>°C</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_1240m</p><u>% rF</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Einstrahlung_1240m</p><u>W/m2</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Rückstrahlung_1240m</p><u>W/m2</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Wassersäule Schneedecke_1240m</p><u>mmWS</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Schneehöhe_1240m</p><u>cm</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 0 cm_1240m</p><u>°C</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 20 cm_1240m</p><u>°C</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 40 cm_1240m</p><u>°C</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 60 cm_1240m</p><u>°C</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Windgeschwindigkeit_1240m</p><u>m/s</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Windrichtung_1240m</p><u>Grad</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Windböe_1240m</p><u>m/s</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Windrichtung Böe_1240m</p><u>Grad</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Niederschlag_1240m</p><u>mm</u><pd><dn>43080208</dn></pd></pmd>
+			<pmd><p>Batteriespannung_1240m</p><u>V</u><pd><dn>43080208</dn></pd></pmd>
+			</pmdl>
 		</station>
    	 <station>
 			<name>Hinterberghorn</name>
@@ -106,6 +166,17 @@
 			<db_tabellenname>"KLIMA22"."HINTERBERGHORN"</db_tabellenname>
 			<aufgebaut>22.04.2008</aufgebaut>
 			<matching>{{2,1},{3,2},{4,6},{5,7},{6,8},{7,9},{8,3},{9,4},{10,5},{11,0}</matching>
+			<pmdl>
+			<pmd><p>Lufttemperatur_2493m</p><u>°C</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_2493m</p><u>% rF</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Einstrahlung_2493m</p><u>W/m2</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Rückstrahlung_2493m</p><u>W/m2</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Batteriespannung_2493m</p><u>V</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Windgeschwindigkeit_2493m</p><u>m/s</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Windrichtung_2493m</p><u>Grad</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Windböe_2493m</p><u>m/s</u><pd><dn>09080126</dn></pd></pmd>
+			<pmd><p>Windrichtung Böe_2493m</p><u>Grad</u><pd><dn>09080126</dn></pd></pmd>
+			</pmdl>
 		</station>
 		<station>
 			<name>Hinterseeau</name>
@@ -114,6 +185,19 @@
 			<db_tabellenname>"KLIMA22"."HINTERSEEAU"</db_tabellenname>		
 			<aufgebaut>17.02.2009</aufgebaut>
 			<matching>{{2,1},{3,2},{4,0},{5,0},{6,0},{7,0},{8,3},{9,4},{10,5},{11,6},{12,7},{13,8},{14,9},{15,10},{16,0},{17,11},{18,0}}</matching>
+			<pmdl>
+			<pmd><p>Lufttemperatur_830m</p><u>°C</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_830m</p><u>% rF</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Einstrahlung_830m</p><u>W/m2</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Rückstrahlung_830m</p><u>W/m2</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Schneehöhe_830m</p><u>cm</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 0 cm_830m</p><u>°C</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 20 cm_830m</p><u>°C</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 40 cm_830m</p><u>°C</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Schneetemperatur 60 cm_830m</p><u>°C</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Niederschlag_830m</p><u>mm</u><pd><dn>34080167</dn></pd></pmd>
+			<pmd><p>Batteriespannung_830m</p><u>V</u><pd><dn>34080167</dn></pd></pmd>
+			</pmdl>
 		</station>	
 		<station>
 			<name>Hoellgraben</name>
@@ -122,6 +206,13 @@
 			<db_tabellenname>"KLIMA22"."HOELLGRABEN_LWD"</db_tabellenname>					
 			<aufgebaut>04.06.2019</aufgebaut>
 			<matching>{{2,1},{3,2},{4,3},{5,0},{6,0}}</matching>
+			<pmdl>
+			<pmd><p>Lufttemperatur_660m</p><u>°C</u><pd><dn>02190574</dn></pd></pmd>
+			<pmd><p>Luftfeuchte_660m</p><u>%rF</u><pd><dn>02190574</dn></pd></pmd>
+			<pmd><p>Niederschlag_660m</p><u>mm</u><pd><dn>02190574</dn></pd></pmd>
+			<pmd><p>Batteriespannung_660m</p><u>V</u><pd><dn>02190574</dn></pd></pmd>
+			<pmd><p>Signalstärke_660m</p><u>-</u><pd><dn>02190574</dn></pd></pmd>
+			</pmdl>
 		</station>
 	 	<station>
 			<name>Schlunghorn</name>

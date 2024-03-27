@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { resolve } = require('path');
 const xml2js = require('xml2js');
 
 const xmlExample1 = "./files/xml.xml";
@@ -17,6 +18,12 @@ async function parseXmlAsync(data) {
 function tester(){
     console.log("hey, tester here");
     return "hey tester here";
+  }
+
+async function getXmlFileAsync(xmlPath) {
+    const dataFromFile = fs.readFileSync(xmlPath, 'utf-8');
+    const result = await xml2js.parseStringPromise(dataFromFile, {explicitArray: false, trim: true});
+    return result;
   }
 
 
@@ -61,22 +68,24 @@ const xmlConfigPath = 'files/npv-archiv-configuration.xml'
 const arrList = [];
 
 
-function readConfigXmlFile(filePath , callback) {
-    fs.readFile(filePath, 'utf-8', (err, data) => {
+function readXmlFile(filePath , callback) {
+    fs.readFile(filePath, 'utf-8', (err, dataFromFile) => {
         if (err) {
             return callback(err, null);
         }
         // Parse XML to JavaScript object
-        xml2js.parseString(data, { explicitArray: false}, (parseErr, result) => {
+        xml2js.parseString(dataFromFile, {explicitArray: false, trim: true}, (parseErr, result) => {
             if (parseErr) {
                 return callback(parseErr, null);
+                // return reject(parseErr);
             }
             callback(null, result);
+            // resolve(result);
         });
     });
 }
 
-// readConfigXmlFile(filePath, (err, result) => {
+// readXmlFile(filePath, (err, result) => {
 //     if (err) {
 //         console.error('Error reading XML file:', err);
 //     } else {
@@ -98,6 +107,17 @@ function printStationNames(arrStationsNamen){
     });
 }
 
+function parseXmlWithPromise(xml){
+  xml2js.parseStringPromise(xml, {explicitArray:false, trim: true})
+      .then(function (result) {
+      console.dir(result);
+      console.log('Done');        
+  })
+      .catch(function (err) {
+  // Failed
+  });
+}
+
 function parseMyXmlFast(){
   var parser = new xml2js.Parser();
   fs.readFile('files/xml.xml', function(err, data) {
@@ -110,5 +130,6 @@ function parseMyXmlFast(){
 
 
 module.exports = {tester, parseXmlAsync, printXml2Console, getXmlFromFile, 
-  printXml2ConsoleWithStartkey, printStationNames, readConfigXmlFile, parseMyXmlFast};
+  printXml2ConsoleWithStartkey, printStationNames, readXmlFile,parseXmlWithPromise,
+   parseMyXmlFast, getXmlFileAsync};
   
