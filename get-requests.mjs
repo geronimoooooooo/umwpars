@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
 import *  as xmlFile from "./xmlFile.js";
 
 export let urlGet = "https://mds.sommer.at/Web-Service-Admintool/fetchXHydro10.php?station=25062015&von=2024-03-26T16:00:49&name=npvbgd&passwort=4f56bbca4d4bdbe06cb8819286ea8690";
@@ -121,22 +121,51 @@ function printUrlGet() {
 
 // printUrlGet();
 
-// fetch(urlGet)
-//     .then(response => {
-//         // network failure, request prevented
-//         if (response.status >= 200 && response.status < 300) {
-//             return Promise.resolve(response);
-//         }
 
 
-//         return Promise.reject(new Error(response.statusText));
-//     })
-//     .then(response => response.json())
-//     .then(result => {
-//         // custom error
-//     })
-//     .catch(error => {
-//         // common error
-//         return null;
-//     });
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+// .then((res)=> {
+//   if (!res.ok){
+  //     throw Error("response not ok")
+  //   }
+  //   return res.json()
+  // })
+  // .then((data)=>{
+//   st = data
+//   // console.log(data) 
+// })
+// .catch((err)=>{
+  //     console.log("error occured", err)
+  // });
+  
+let json;
 
+async function fetchDataAndSaveInVariable() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1'); 
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const jsonData = await response.json();
+    return jsonData;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return null;
+  }
+}
+
+async function main() {
+  var jsonData = await fetchDataAndSaveInVariable();
+  if (jsonData) {
+      console.log('JSON Data:', jsonData);
+      console.log(jsonData.title);
+      // Now you can use the JSON data stored in the variable jsonData
+  } else {
+      console.log('Failed to fetch JSON data');
+  }
+}
+main();
+
+json = await fetchDataAndSaveInVariable();
+console.log("json: "+JSON.stringify(json));
+console.log("json.title: "+ json.title);
