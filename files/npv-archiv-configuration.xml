@@ -165,7 +165,7 @@
 			<nummer>09080126</nummer>
 			<db_tabellenname>"KLIMA22"."HINTERBERGHORN"</db_tabellenname>
 			<aufgebaut>22.04.2008</aufgebaut>
-			<matching>{{2,1},{3,2},{4,6},{5,7},{6,8},{7,9},{8,3},{9,4},{10,5},{11,0}</matching>
+			<matching>{{2,1},{3,2},{4,6},{5,7},{6,8},{7,9},{8,3},{9,4},{10,5},{11,0}}</matching>
 			<pmdl>
 			<pmd><p>Lufttemperatur_2493m</p><u>°C</u><pd><dn>09080126</dn></pd></pmd>
 			<pmd><p>Luftfeuchte_2493m</p><u>% rF</u><pd><dn>09080126</dn></pd></pmd>
