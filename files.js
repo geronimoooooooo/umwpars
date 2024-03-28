@@ -2,7 +2,7 @@
 const os = require('os');
 const value =  os.cpus();
 var xml2js = require('xml2js');
-const { readXmlFile, parseXmlWithPromise, getXmlFileAsync } = require('./xmlFile');
+const { readXmlFile, parseXmlWithPromise, readXmlFileAsyncAwait } = require('./xmlFile');
 
 var xml = '<foo><a>1   </a><b>    2   </b></foo>';
 
@@ -25,5 +25,5 @@ parseXmlWithPromise(xml);
 // })
 
 
-// const result = getXmlFileAsync('files/xml.xml');
+// const result = readXmlFileAsyncAwait('files/xml.xml');
 // console.log(result);// Promise { <pending> }

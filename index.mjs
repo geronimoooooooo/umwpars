@@ -10,8 +10,8 @@ const arrLoc = [];
 const arrStationsNamen = [];
 
 // xmlFile.printXml2Console('files/npv-archiv-configuration.xml');
-// console.log(xmlFile.getXmlFromFile())
-// xmlFile.printXml2ConsoleWithStartkey(xmlFile.getXmlFromFile('files/npv-archiv-configuration.xml'));
+// console.log(xmlFile.readXmlFromFileIntoString())
+// xmlFile.printXml2ConsoleWithStartkey(xmlFile.readXmlFromFileIntoString('files/npv-archiv-configuration.xml'));
 
 // xmlFile.readXmlFile('files/xml.xml', (err, result) => {
 //     if (err) {
