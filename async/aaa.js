@@ -29,10 +29,11 @@ async function f() {
   
   f();
 
-  setTimeout(() => {
-    console.log("hey");
-  }, 5000);
+  // setTimeout(() => {
+  //   console.log("hey");
+  // }, 5000);
 
-  setInterval(() => {
-    console.log("interval");
-  }, 2000);
+  // setInterval(() => {
+  //   console.log("interval");
+  // }, 2000);
+
