@@ -5,14 +5,15 @@
   console.log(asyncMsg);
 })()
 
-async function printAsync(text) {
-    return Promise.resolve(text);
+async function printAsync(text) {    
+  // return Promise.resolve(text); nicht gebraucht, da async func() Promise returnt
+  return text; 
 }
 
 (async function(text) {
     const response = await printAsync(text);
     console.log(response);
-})('Hello, World!');
+})('Hello, World!!!222');
 
 const f2 = async ()=>{return Promise.resolve(2)};
 f2().then(res=>console.log(res));
