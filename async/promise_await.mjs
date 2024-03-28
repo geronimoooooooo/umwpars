@@ -1,5 +1,5 @@
-const { logger } = require("../logger");
-// import { logger } from "../logger.js";
+// const { logger } = require("../logger");
+import { logger } from "../logger.js";
 
 
 //producer
@@ -77,3 +77,16 @@ async function getRecipes(){
     
 //   const recipes = await getRecipes();
 
+const resp = await fetch('https://jsonplaceholder.typicode.com/users/3');
+const user = await resp.json();
+console.log(user.company)
+
+const res = await fetch('https://nodejs.org/api/documentation.json');
+if (res.ok) {
+  const data = await res.json();
+  console.log(data.type);
+}
+
+// async/await code
+const asyncMsg = await Promise.resolve('hello world');
+console.log(asyncMsg);

@@ -169,3 +169,27 @@ main();
 json = await fetchDataAndSaveInVariable();
 console.log("json: "+JSON.stringify(json));
 console.log("json.title: "+ json.title);
+
+async function getRecipes(){
+  fetch("https://api.spoonacular.com/recipes/complexSearch?number=2&apiKey=b4408aa9ab144e47ae2bf8eff93e72f5")
+  .then((response) => response.json())
+  .then((user) => {
+  const recipes = user.results.map(result => result.id)
+  console.log("rec:§" +recipes)
+  return recipes
+  });
+  }
+  
+const recipes = await getRecipes();
+
+
+async function doSomethingAsync() {
+  return Promise.resolve('Hello, World!');
+}
+(async function() {
+  const response = await doSomethingAsync();
+  console.log(response);
+})();
+const response = await doSomethingAsync();
+// const response = doSomethingAsync();
+console.log('kj'+response);

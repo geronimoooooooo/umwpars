@@ -84,6 +84,20 @@ function readXmlFile(filePath , callback) {
         });
     });
 }
+function parseXmlDirtyFunction(pathname, callback) {
+  var parser = require('xml2js').Parser( {explicitArray: false, trim: true})
+      util = require('util')
+
+  fs.readFile(pathname, function (err, data) {
+      parser.parseString(data, function(err, result) {
+          console.log('Complete result:');
+          // console.log(util.inspect(result, {depth: null})); //Work
+          console.log('Try to access element:');
+          console.dir(result.klima.stationen.station[0], {depth:null}); //Work
+          
+      });
+  });
+}
 
 // readXmlFile(filePath, (err, result) => {
 //     if (err) {
@@ -131,5 +145,5 @@ function parseMyXmlFast(){
 
 module.exports = {tester, parseXmlAsync, printXml2Console, getXmlFromFile, 
   printXml2ConsoleWithStartkey, printStationNames, readXmlFile,parseXmlWithPromise,
-   parseMyXmlFast, getXmlFileAsync};
+   parseMyXmlFast, getXmlFileAsync, parseXmlDirtyFunction};
   

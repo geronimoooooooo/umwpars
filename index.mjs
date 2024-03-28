@@ -172,6 +172,9 @@ const xmlS = await fetchXmlFromMds(urlGet)
         
     }
   }
+  //funzt, aber soweit kommt abarbeitung gar nicht
+  xmlFile.parseXmlDirtyFunction('files/npv-archiv-configuration.xml')
+
 
 //   await compare(arrList, arrStationsXmlResponseAsXml2jsObj);
 
