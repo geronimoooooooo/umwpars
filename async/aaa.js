@@ -28,7 +28,7 @@ async function f() {
     console.log(result); // "done!"
   }
   
-  f();
+f();
 
   // setTimeout(() => {
   //   console.log("hey");
@@ -38,3 +38,20 @@ async function f() {
   //   console.log("interval");
   // }, 2000);
 
+async function bakeCookies() {
+  // Simulating baking time
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  console.log("stop the world");
+  return "some text"
+}
+let cookies;
+async function serveCookies(){
+  cookies = await bakeCookies();
+  console.log(typeof cookies);
+  console.log(cookies);
+}
+
+cookies = await serveCookies()
+console.log(`my ${cookies}`);
+// let prom = bakeCookies()
+// console.log(typeof prom);
