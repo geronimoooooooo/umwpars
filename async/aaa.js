@@ -51,13 +51,29 @@ async function serveCookies(){
   console.log(cookies);
 }
 
-cookies = await serveCookies()
-console.log(`my ${cookies}`);
+
+(async ()=> {
+
+  cookies = await serveCookies()
+  console.log(`my ${cookies}`);
+})()
 // let prom = bakeCookies()
 // console.log(typeof prom);
 
-function foo(){
 
-}
 
-foo();
+const prom = new Promise((resolve, reject)=>{
+  let num =10;
+
+  if (num==10) {
+    resolve(num)
+  } else {
+    reject(new Error("Danger danger!"));
+  }
+})
+
+const hor = prom.then(function(result){
+  console.log(result);
+  return  result;
+})
+console.log(hor);
