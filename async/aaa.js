@@ -55,3 +55,9 @@ cookies = await serveCookies()
 console.log(`my ${cookies}`);
 // let prom = bakeCookies()
 // console.log(typeof prom);
+
+function foo(){
+
+}
+
+foo();
