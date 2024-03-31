@@ -34,3 +34,15 @@ import *  as xmlFile from "../xmlFile.js";
   
   cookies = await serveCookies()
   console.log(`my: ${cookies}`); //my: some cookies as text
+
+async function getData(url) {
+  const response = await fetch(url);
+  return response.json();
+}
+
+const data = await getData("https://jsonplaceholder.typicode.com/posts/1");
+
+console.log(data)
+// console.log({data})
+const d1 = {data}//adds data as key to the jsonValue
+console.log(d1);
