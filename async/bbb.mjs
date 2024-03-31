@@ -46,3 +46,19 @@ console.log(data)
 // console.log({data})
 const d1 = {data}//adds data as key to the jsonValue
 console.log(d1);
+
+
+async function getJokes(category) { //categories such as “dev”, “science”, “movie”
+  try {
+    const response = await fetch(`https://api.chucknorris.io/jokes/random?category=${category}`);
+    const data = await response.json();
+    const joke = data.value;
+    console.log(`Here's a joke about ${category}: ${joke}`);
+    return joke
+  } catch (e) {
+    console.log(`Error: ${e}`);
+  }
+}
+
+const joke2 = await getJokes("dev")
+console.log(joke2);
