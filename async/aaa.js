@@ -62,6 +62,7 @@ async function serveCookies(){
 
 
 
+
 const prom = new Promise((resolve, reject)=>{
   let num =10;
 
@@ -77,3 +78,9 @@ const hor = prom.then(function(result){
   return  result;
 })
 console.log(hor);
+
+//const name2 = async ()=> {
+async function name2() {
+  return 10004548
+}
+name2().then(resolve =>console.log(resolve))
