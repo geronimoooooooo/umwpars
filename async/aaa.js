@@ -84,3 +84,26 @@ async function name2() {
   return 10004548
 }
 name2().then(resolve =>console.log(resolve))
+
+function getNegNumber(num) {
+  return num > 0
+}
+
+const arr = [-4,-3,0,3,4]
+const arrNeg = arr.filter(getNegNumber)
+console.log(arrNeg)
+
+let sentence ="a bb cccc ddd eeeee"
+const arrWords = sentence.split(" ");
+console.log(arrWords)
+let maxLength = 0;
+let maxLengthWord =""
+for(let i = 0; i<arrWords.length; i++){
+  if(arrWords[i].length > maxLength){
+    maxLengthWord = arrWords[i];
+    maxLength = maxLengthWord.length
+  }
+  console.log(maxLengthWord);
+}
+const maxLength2 = arrWords.map(word => word.length)
+console.log(maxLength2);
