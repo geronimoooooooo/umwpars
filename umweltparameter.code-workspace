@@ -6,6 +6,9 @@
 	],
 	"settings": {
 		"typescript.suggest.completeFunctionCalls": true,
-		"javascript.suggest.completeFunctionCalls": true
+		"javascript.suggest.completeFunctionCalls": true,
+		"docwriter.style": "JSDoc",
+		"docwriter.progress.trackFunctions": false,
+		"docwriter.progress.trackMethods": false
 	}
 }

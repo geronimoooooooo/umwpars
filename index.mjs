@@ -178,7 +178,7 @@ const xmlS = await fetchXmlFromMds(urlGet)
 
 //   await compare(arrList, arrStationsXmlResponseAsXml2jsObj);
 
-//   xmlFile.parseMyXmlFast()
+//   xmlFile.readParseXmlFile()
 //   console.log('XML Response:', xmlFromMds);
 
 /*
